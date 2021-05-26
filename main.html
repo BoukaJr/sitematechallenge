@@ -7,8 +7,17 @@
 
 <body>
     <main>
-        <dialog-component welcomeMessage="hello there"></dialog-component>
+        <button type="button" onclick="showDialog()">Click Me</button>
+        <div id='dialogbox' style="display:none;">
+            <dialog-component welcomeMessage="hello there"></dialog-component>
+        </div>
     </main>
 </body>
 
 </html>
+
+<script>
+    function showDialog(){
+        document.getElementById('dialogbox').style.display = "block";
+    }
+</script>
