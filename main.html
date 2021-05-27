@@ -11,6 +11,7 @@
         <div id='dialogbox' style="display:none;">
             <dialog-component welcomeMessage="hello there"></dialog-component>
         </div>
+        <span id="output"></span>
     </main>
 </body>
 
@@ -19,5 +20,6 @@
 <script>
     function showDialog(){
         document.getElementById('dialogbox').style.display = "block";
+        document.getElementById("output").innerHTML = clicked;
     }
 </script>

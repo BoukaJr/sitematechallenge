@@ -23,8 +23,13 @@ customElements.define('dialog-component', confDialog);
 
 function clickedYes(){
     document.getElementById('yes').style.display = "block";
+    clicked = true
 }
+
 function clickedCancel(){
+    clicked = false
     document.getElementById('container').style.display = "none";
     document.getElementById('cancelMessage').style.display = "block";
 }
+
+var clicked = true
