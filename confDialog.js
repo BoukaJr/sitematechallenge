@@ -9,12 +9,8 @@ class confDialog extends HTMLElement {
         <div id="container" style="display:block;">
             <p>${welcomeMessage}</p>
             <button type="button" onclick="clickedYes()">Yes</button>
-            <div id='yes' style="display:none;">
-                You clicked yes!
-            </div>
             <button type="button" onclick="clickedCancel()">Cancel</button>
         </div>
-        <div id="cancelMessage" style="display:none;"><div>
         `;
       }
 }
@@ -22,14 +18,16 @@ class confDialog extends HTMLElement {
 customElements.define('dialog-component', confDialog);
 
 function clickedYes(){
-    document.getElementById('yes').style.display = "block";
     clicked = true
+    document.getElementById("output").innerHTML = clicked;
+
 }
 
 function clickedCancel(){
     clicked = false
-    document.getElementById('container').style.display = "none";
-    document.getElementById('cancelMessage').style.display = "block";
+    document.getElementById('dialogbox').style.display = "none";
+    document.getElementById("output").innerHTML = clicked;
+
 }
 
-var clicked = true
+var clicked = null
