@@ -6,10 +6,10 @@ class confDialog extends HTMLElement {
     connectedCallback() {
         var welcomeMessage = this.attributes.welcomeMessage.value
         this.innerHTML = `
-        <div id="container" style="display:block;">
+        <div id="container">
             <p>${welcomeMessage}</p>
-            <button type="button" onclick="clickedYes()">Yes</button>
-            <button type="button" onclick="clickedCancel()">Cancel</button>
+            <button type="button" class="button" id="yes" onclick="clickedYes()">Yes</button>
+            <button type="button" class="button" id="cancel" onclick="clickedCancel()">Cancel</button>
         </div>
         `;
       }
@@ -18,13 +18,15 @@ class confDialog extends HTMLElement {
 customElements.define('dialog-component', confDialog);
 
 function clickedYes(){
-    clicked = true
+    clicked = 'You clicked yes!'
     document.getElementById("output").innerHTML = clicked;
+    document.getElementById('dialogbox').style.display = "none";
+
 
 }
 
 function clickedCancel(){
-    clicked = false
+    clicked = 'You didnt click yes :('
     document.getElementById('dialogbox').style.display = "none";
     document.getElementById("output").innerHTML = clicked;
 
